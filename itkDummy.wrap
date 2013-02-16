@@ -1,0 +1,6 @@
+WRAP_CLASS(itk::Dummy POINTER)
+   foreach(t ${WRAP_ITK_SCALAR} ${WRAP_ITK_COLOR} ${WRAP_ITK_COMPLEX_REAL})
+     WRAP_TEMPLATE("${ITKM_${t}}" "${ITKT_${t}}")
+   endforeach(t)
+END_WRAP_CLASS()
+
