@@ -1,6 +1,4 @@
 itk_wrap_class(itk::Dummy POINTER)
-   foreach(t ${WRAP_ITK_SCALAR} )
-     itk_wrap_template("${ITKM_${t}}" "${ITKT_${t}}")
-   endforeach(t)
+  itk_wrap_image_filter("${WRAP_ITK_SCALAR}" 1 2+)
 itk_end_wrap_class()
 
