@@ -1,5 +1,6 @@
 import itk 
 import vtk
+import vtk.util.numpy_support as vtkNumPy 
 
 pixeltype = itk.D 
 dim = 3 
@@ -41,6 +42,17 @@ vertices.InsertNextCell( 1 ); vertices.InsertCellPoint( vtkpoints.InsertNextPoin
 polydata = vtk.vtkPolyData()
 polydata.SetPoints(vtkpoints)
 polydata.SetVerts( vertices )
+# data pointer
+pd = polydata.GetPointData()
+DeepCopy = 1
+# color the points
+vtkdataarray = vtkNumPy.numpy_to_vtk( range(10) , DeepCopy) 
+vtkdataarray.SetName("similarity")
+pd.AddArray( vtkdataarray )
+# displacments
+vtkvectorarray = vtkNumPy.numpy_to_vtk( [(1,1,2),(1,2,2),(1,9,2),(4,1,2),(7,1,2),(6,1,2),(1,4,2),(1,3,2),(1,1,0),(0,1,2)] , DeepCopy) 
+vtkvectorarray.SetName("displacement")
+pd.AddArray( vtkvectorarray )
 
 polydatawriter = vtk.vtkPolyDataWriter()
 polydatawriter.SetFileName("test.vtk")
