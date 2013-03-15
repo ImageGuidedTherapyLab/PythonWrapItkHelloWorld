@@ -3,6 +3,7 @@ Wrap an external project with python bindings
 
 http://www.itk.org/Wiki/ITK/Release_4/Wrapping/BuildProcess#External_Project
 
+using ITK 4.4
 
 ## to build install drop this project in ITK/Modules/External/
 
