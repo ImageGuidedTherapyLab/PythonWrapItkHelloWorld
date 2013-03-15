@@ -1,6 +1,6 @@
 set(DOCUMENTATION "Hello World")
 
-itk_module(ITKBufferConvertion
+itk_module(ITKHelloWorld
   DEPENDS
     ITKCommon  
   TEST_DEPENDS 

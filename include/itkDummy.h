@@ -1,8 +1,7 @@
 #ifndef __itkDummy_h
 #define __itkDummy_h
 
-#include "itkProcessObject.h"
-#include "itkImage.h"
+#include "itkObject.h"
 
 namespace itk
 {
@@ -32,6 +31,10 @@ public:
  protected:
   Dummy() {};
   virtual ~Dummy() {};
+  virtual void PrintSelf(std::ostream& os, Indent indent) const
+  {
+    Superclass::PrintSelf( os, indent );
+  }
 
 private:
   Dummy(const Self &);    //purposely not implemented
