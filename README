@@ -1,8 +1,30 @@
-
 Wrap an external project with python bindings
 ==============================================
 
 http://www.itk.org/Wiki/ITK/Release_4/Wrapping/BuildProcess#External_Project
+
+
+## to build install drop this project in ITK/Modules/External/
+
+   cd ITK/Modules/External/
+   git clone (this project)
+   then follow the usual out of source build/install
+
+## example configure output:
+   cmake -DBUILD_SHARED_LIBS=ON  -DCMAKE_BUILD_TYPE=Debug
+-DBUILD_EXAMPLES=ON -DBUILD_TESTING=OFF -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_PREFIX=$ITK_HOME -DITK_USE_GPU=ON -DOPENCL_INCLUDE_DIRS=$SDK_DIR/OpenCL/common/inc -DOPENCL_LIBRARIES=/usr/lib/nvidia-current/libOpenCL.so -DOPENCL_ROOT_DIR=$SDK_DIR/OpenCL -DITK_WRAP_PYTHON=ON -DINSTALL_WRAP_ITK_COMPATIBILITY=OFF -DITK_WRAP_double=ON -DITK_USE_SYSTEM_SWIG=ON -DPYTHON_EXECUTABLE=$EPD_ROOT/bin/python -DPYTHON_INCLUDE_DIR=$EPD_ROOT/include/python2.7 -DPYTHON_LIBRARY=$EPD_ROOT/lib/libpython2.7.so ../InsightToolkit-dev
+ .
+ .
+ .
+-- ITKHelloWorld: Creating module.
+-- ITKHelloWorld: Creating itkDummy submodule.
+ .
+ .
+## Build this Module
+
+   make ITKHelloWorldPython
+
+   
 
 ## example output
 
@@ -14,3 +36,4 @@ http://www.itk.org/Wiki/ITK/Release_4/Wrapping/BuildProcess#External_Project
 >>> df.GetValue()
 1.0
 ```
+
