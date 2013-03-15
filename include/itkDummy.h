@@ -26,11 +26,12 @@ public:
 
   TValue GetValue() const
   {
-    return NumericTraits<TValue>::OneValue();
+    //return NumericTraits<TValue>::OneValue();
+    return static_cast<TValue>(1.0);
   }
  protected:
   Dummy() {};
-  virtual ~Dummy() {};
+  ~Dummy() {};
   virtual void PrintSelf(std::ostream& os, Indent indent) const
   {
     Superclass::PrintSelf( os, indent );

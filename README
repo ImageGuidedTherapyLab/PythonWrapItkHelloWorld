@@ -30,11 +30,20 @@ using ITK 4.4
 ## example output
 
 ```
->>> import dummyPython
->>> df = dummyPython.itkDummyF_New()
->>> dir(df)
-['AddObserver', 'BreakOnError', 'Clone', 'CreateAnother', 'DebugOff', 'DebugOn', 'GetCommand', 'GetDebug', 'GetGlobalWarningDisplay', 'GetMTime', 'GetMetaDataDictionary', 'GetNameOfClass', 'GetPointer', 'GetReferenceCount', 'GetTimeStamp', 'GetValue', 'GlobalWarningDisplayOff', 'GlobalWarningDisplayOn', 'HasObserver', 'InvokeEvent', 'Modified', 'New', 'Print', 'RemoveAllObservers', 'RemoveObserver', 'SetDebug', 'SetGlobalWarningDisplay', 'SetMetaDataDictionary', '__New_orig__', '__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__swig_destroy__', '__weakref__', 'cast', 'this', 'thisown']
+Enthought Python Distribution -- www.enthought.com
+Version: 7.3-1 (64-bit)
+
+Python 2.7.3 |EPD 7.3-1 (64-bit)| (default, Apr 11 2012, 17:52:16) 
+[GCC 4.1.2 20080704 (Red Hat 4.1.2-44)] on linux2
+Type "credits", "demo" or "enthought" for more information.
+>>> import itk
+>>> df = itk.Dummy[itk.F].New()
+Warning: Unknown parameter 'itk::DefaultStaticMeshTraits< float,2,2,float,float >' in template 'itk::PointSet'
+Warning: Unknown parameter 'itk::DefaultDynamicMeshTraits< float,2,2,float,float >' in template 'itk::PointSet'
+Warning: Unknown parameter 'itk::DefaultStaticMeshTraits< float,3,3,float,float >' in template 'itk::PointSet'
+Warning: Unknown parameter 'itk::DefaultDynamicMeshTraits< float,3,3,float,float >' in template 'itk::PointSet'
+Warning: Unknown parameter 'itk::DefaultStaticMeshTraits< double,2,2,double,double,double >' in template 'itk::PointSet'
+Warning: Unknown parameter 'itk::DefaultStaticMeshTraits< double,3,3,double,double,double >' in template 'itk::PointSet'
 >>> df.GetValue()
 1.0
 ```
-
